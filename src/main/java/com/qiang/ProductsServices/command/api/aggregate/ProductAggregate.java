@@ -2,6 +2,7 @@ package com.qiang.ProductsServices.command.api.aggregate;
 
 import com.qiang.ProductsServices.command.api.commands.CreateProductCommand;
 import com.qiang.ProductsServices.command.api.events.ProductCreatedEvent;
+import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
@@ -18,6 +19,7 @@ public class ProductAggregate {
     private BigDecimal price;
     private Integer quantity;
 
+    @CommandHandler
     public ProductAggregate(CreateProductCommand createProductCommand) {
         // validation
         // event --> publish

@@ -32,6 +32,6 @@ public class ProductCommandController {
                 .build();
 
         String result = commandGateway.sendAndWait(createProductCommand);
-        return "Product Added";
+        return result;
     }
 }
